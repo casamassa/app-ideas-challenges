@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Convert Binary to Decimal</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Convert Binary to Decimal</h1>
+    <form action="/" method="POST" id="form">
+      <p><label for="binary">Binary:</label> <input type="text" name="binary" id="binary" value="<%=binary %>" required minlength="1" /></p>
+      <p><label for="decimal">Decimal:</label> <input type="text" name="decimal" id="decimal" value="<%=decimal %>" readonly /></p>
+      <input type="submit" value="Convert" /> <input type="button" value="Reset" onclick="resetForm()" />
+    </form>
+    <% if(errormessage) { %>
+      <p>
+        <label style="color:Red" id="lblErrorMessage"><%= errormessage %></label>
+      </p>
+    <%}%>
+    <script>
+      function resetForm() {
+         document.getElementById("binary").value = '';
+         document.getElementById("decimal").value = '';
+         document.getElementById("lblErrorMessage").innerHTML = '';
+      }
+   </script>
+  </body>
+</html>
